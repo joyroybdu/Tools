@@ -7,7 +7,7 @@ import {
   FiLogOut, 
   FiLogIn, 
   FiUserPlus, 
-  FiMail, 
+  
   FiInfo,
   FiFileText,
   FiFile,
@@ -97,14 +97,7 @@ export default function Navbar() {
             <span>About</span>
           </NavLink>
 
-          <NavLink 
-            to="/contact" 
-            className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}
-            onClick={closeMobileMenu}
-          >
-            <FiMail className="nav-icon" />
-            <span>Contact</span>
-          </NavLink>
+          
 
           {/* Converter Dropdown */}
           <div className="dropdown-container" ref={dropdownRef}>

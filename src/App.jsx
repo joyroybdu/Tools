@@ -1,6 +1,7 @@
 
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -24,6 +25,7 @@ import HabitHome from './pages/HabitHome';
 import { useAuth } from './context/AuthContext';
 import { TasksProvider } from './context/TasksContext';
 import Habits from './pages/Habits';
+import About from './pages/About';
 
 function Protected({ children }) {
   const { user, loading } = useAuth();
@@ -38,6 +40,7 @@ export default function App() {
       <TasksProvider>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Protected><Profile /></Protected>} />
@@ -66,6 +69,7 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </TasksProvider>
+      <Footer />
     </>
   );
 }
